@@ -2,3 +2,21 @@
     background-color: rgb(10, 5, 101);
     min-height: 100vh;
 }
+
+.main-loading-screen{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.not-visible {
+    display: none;
+}
