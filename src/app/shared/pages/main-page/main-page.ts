@@ -9,24 +9,20 @@ import { LoadingScreen } from "../../components/loading-screen/loading-screen";
   templateUrl: './main-page.html',
   styleUrl: './main-page.scss',
 })
-export class MainPage implements OnInit, OnDestroy {
+export class MainPage {
   loading: boolean = true;
-  private timerId: any;
-  loadingScreenStatus = "main-loading-screen"; 
+  loadingScreenClosed = "main-loading-screen-hidden";
 
-  ngOnInit() {
-    if (this.loading) {
-      this.timerId = setTimeout(() => {
+  if (loading: boolean) {
+      setTimeout(() => {
+        this.closeLoadingScreen();
         this.loading = false;
-        console.log("Loading screen should be hidden now");
       }, 3000);
     }
+
+  closeLoadingScreen() {
+    return this.loadingScreenClosed;
   }
 
-  ngOnDestroy() {
-    // Verhindert Speicherlecks, falls die Komponente vorzeitig verlassen wird
-    if (this.timerId) {
-      clearTimeout(this.timerId);
-    }
-  }
-}
+}  
+
